@@ -1,0 +1,15 @@
+* underline é o tempo de execução em andamento
+
+
+
+PARALELISMO:
+
+processo1: ___________________________________ - primeiro core da cpu
+processo2: ___________________________________ - segundo core da cpu
+
+
+
+CONCORRÊNCIA:
+
+processo1: _____     ____  ___  _     ___      - primeiro core da cpu
+processo2:      _____    __   __ _____   _____ - primeiro core da cpu
