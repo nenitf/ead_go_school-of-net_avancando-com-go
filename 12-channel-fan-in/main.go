@@ -1,7 +1,7 @@
 package main
 
 /*
-fun in: acumular diversos channels em um só, para consultas
+fan in: acumular diversos channels em um só, para consultas
 */
 
 import (
@@ -14,6 +14,7 @@ func main() {
 
 	x := funnel(generateMsg("hello go"), generateMsg("hello world"))
 	for i := 0; i < 10; i++ {
+		// imprime mensagem se existente e esvazia até o final do for
 		fmt.Println(<-x)
 	}
 	fmt.Println("Finished...")
@@ -37,6 +38,8 @@ func funnel(channel1, channel2 <-chan string) <-chan string {
 
 	go func() {
 		for {
+			// recebendo: "channel <-"
+			// repassando: "<-channel1"
 			channel <- <-channel1
 		}
 	}()
